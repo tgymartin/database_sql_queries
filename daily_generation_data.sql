@@ -1,0 +1,10 @@
+SELECT "Meter Reading",
+	"Generation",
+	"LogDateTime",
+	"LogDateISO"
+FROM MVW_DAILY_GENERATION
+WHERE "TagName" LIKE '%SITE%'
+	AND "LogDateTime" >= '2023-04-01 00:00:00+08'::TIMESTAMPTZ
+	AND "LogDateTime" < '2023-05-01 00:00:00+08'::TIMESTAMPTZ
+ORDER BY "LogDateISO" ASC
+LIMIT 10000
